@@ -28,6 +28,13 @@ void inserir(FILA f, int e) {
     f->maisNovo = f->maisNovo->next;
   }
 }
+void inserir_inicio(FILA f , int e){
+	link aux=f->primeiro;
+	f->primeiro = novoNo(e,aux );
+}
+void inserir_fim(FILA f , int e){
+	f->maisNovo
+}
 
 int remover(FILA f){
   int x;
@@ -46,6 +53,16 @@ int remover(FILA f){
 
   free(t);
   return x;
+}
+void remover_inicio(FILA f){
+	if(!filaVazia(f)){
+		printf("Lista vazia");
+		exit (-1);
+	}
+	
+	link aux = f->primeiro;
+	f->primeiro = f->primeiro->next;
+	free(aux);
 }
 int filaVazia(FILA f) {
   return ((f->maisNovo == NULL) || (f->maisAntigo == NULL));
